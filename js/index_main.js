@@ -1,5 +1,8 @@
 
 
+import { getApiKey } from './apiKey.js';
+const api_key = getApiKey();
+
 
 async function getMovies() {
     const response = await fetch(

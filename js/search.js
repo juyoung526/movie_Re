@@ -2,7 +2,6 @@
 import { getApiKey } from './apiKey.js';
 
 
-// const API_KEY = '5d3926ca1e71ba7d5ae9204ab7d2ea6a';
 const API_KEY = getApiKey();
 const BASE_URL = 'https://api.themoviedb.org/3';
 
