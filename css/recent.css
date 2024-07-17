@@ -49,6 +49,8 @@
   cursor: pointer;
 }
 
+/*#recentSub.on 이렇게 붙여야 할 거 같아요! 수정하면 지워줘요*/
 #recentSub .on {
   display: none;
 }
+

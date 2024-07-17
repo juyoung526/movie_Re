@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dive in_search</title>
+    <link rel="stylesheet" href="css/search.css" />
+    <!-- 구글폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Barcode+128&display=swap"
+      rel="stylesheet"
+    />
+    <!-- 폰트어썸 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div id="search">
+      <form>
+        <input type="text">
+        <button class="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button type="button"><i class="fa-solid fa-xmark close"></i></button>
+      </form>
+      <div class="searchText">
+        <!-- 검색 결과 텍스트가 여기에 동적으로 삽입됩니다 -->
+      </div>
+      <div class="searchResult">
+        <!-- 검색 결과가 여기에 동적으로 삽입됩니다 -->
+        <!-- <ul class="searchSub">
+          <li>
+            <img src="img/testposter_01.jpg" alt="" />
+            <h4>인사이드아웃</h4>
+            <i class="fa-solid fa-star">9.4</i>
+            <i class="fa-regular fa-heart zzim"></i>
+            <i class="fa-solid fa-heart zzim on"></i>
+          </li>
+        </ul> -->
+      </div>
+      <div class="pagination">
+        <!-- 페이지네이션이 여기에 동적으로 삽입됩니다 -->
+      </div>
+    </div>
+    <script type="module" src="js/search.js"></script>
+  </body>
+</html>
