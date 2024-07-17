@@ -26,6 +26,7 @@ body {
   font-family: "GmarketSansMedium";
   background-color: #1d4173;
   color: #e9a445;
+  overflow-x: hidden;
 }
 
 /* 

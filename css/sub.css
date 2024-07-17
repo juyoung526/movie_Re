@@ -1,0 +1,80 @@
+.topScreen {
+  overflow: hidden;
+}
+
+/* genreScreen */
+#genreScreen {
+  width: 100%;
+  height: 450px;
+  background-color: #e1e1e14d;
+  text-align: center;
+  position: relative;
+}
+
+#genreScreen .bigPoster {
+  width: 100%;
+  height: 450px;
+  filter: blur(3px);
+}
+
+#genreScreen .smallPoster {
+  width: 500px;
+  height: 400px;
+  margin-top: 50px;
+  border-radius: 20px;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#title {
+  width: 100%;
+  /* background-color: #1d4173; */
+  background-color: rgba(11, 41, 73, 0.5);
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  padding-left: 200px;
+}
+#title h2 {
+  margin-right: 20px;
+}
+
+.bottomScreen {
+  width: 100%;
+}
+
+#genreSub {
+  width: 100%;
+  padding-top: 50px;
+  padding-left: 200px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#genreSub li {
+  width: 250px;
+  margin: 40px;
+  position: relative;
+  cursor: pointer;
+}
+#genreSub img {
+  width: 250px;
+  height: 300px;
+  border-radius: 20px;
+}
+
+#genreSub .zzim {
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+#genreSub .on {
+  display: none;
+}
