@@ -69,7 +69,7 @@
       </ul>
     </header>
 
-    <section>
+    <section id="rangkingBox">
       <div class="mainHd">
         <ul id="mainScreen">
           <!--  <li>
@@ -81,62 +81,352 @@
             </li> -->
         </ul>
       </div>
-      <div class="container">
-        <div id="subScreen1">
-          <h2>국내 인기</h2>
-          <ul id="domestic">
-            <!-- <li>
-                        <img src="img/testposter_01.jpg" alt="movieposter">
-                        <ul class="textWrap">
-                            <li>
-                                <h4 id="title">원더</h4>
-                                <p>로맨스</p>
-                            </li>
-                            <li>
-                                <p>8.9</p>
-                                <span><i class="fa-solid fa-heart"></i></span>
-                            </li>
-                        </ul>
-                    </li> -->
-          </ul>
-        </div>
-        <div id="subScreen2">
-          <h2>해외 인기</h2>
-          <ul id="abroad">
-            <!-- <li>
-                        <img src="img/testposter_01.jpg" alt="movieposter">
-                        <ul class="textWrap">
-                            <li>
-                                <h4 id="title">원더</h4>
-                                <p>로맨스</p>
-                            </li>
-                            <li>
-                                <p>8.9</p>
-                                <span><i class="fa-solid fa-heart"></i></span>
-                            </li>
-                        </ul>
-                    </li> -->
-          </ul>
+      <div id="section">
+        <div id="container2">
+          <section id="section1">
+            <h2>한국 인기</h2>
+            <ul class="korea">
+              <li class="movie" data-id="1">
+                <div class="imgWrap">
+                  <img src="" alt="" class="moviePoster" />
+                </div>
+                <div class="textWrap">
+                  <div class="textTop">
+                    <h2 class="movieName">영화 제목 1</h2>
+                    <span class="topIcon" onclick="toggleLike(this)"
+                      ><i class="fa-solid fa-heart"></i
+                    ></span>
+                    <div class="textDown">
+                      <p>
+                        <i class="fa-solid fa-star"></i
+                        ><span class="rating">4.5</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="movie" data-id="2">
+                <div class="imgWrap">
+                  <img src="" alt="" class="moviePoster" />
+                </div>
+                <div class="textWrap">
+                  <div class="textTop">
+                    <h2 class="movieName">영화 제목 1</h2>
+                    <span class="topIcon" onclick="toggleLike(this)"
+                      ><i class="fa-solid fa-heart"></i
+                    ></span>
+                    <div class="textDown">
+                      <p>
+                        <i class="fa-solid fa-star"></i
+                        ><span class="rating">4.5</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="movie" data-id="3">
+                <div class="imgWrap">
+                  <img src="" alt="" class="moviePoster" />
+                </div>
+                <div class="textWrap">
+                  <div class="textTop">
+                    <h2 class="movieName">영화 제목 1</h2>
+                    <span class="topIcon" onclick="toggleLike(this)"
+                      ><i class="fa-solid fa-heart"></i
+                    ></span>
+                    <div class="textDown">
+                      <p>
+                        <i class="fa-solid fa-star"></i
+                        ><span class="rating">4.5</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="movie" data-id="4">
+                <div class="imgWrap">
+                  <img src="" alt="" class="moviePoster" />
+                </div>
+                <div class="textWrap">
+                  <div class="textTop">
+                    <h2 class="movieName">영화 제목 1</h2>
+                    <span class="topIcon" onclick="toggleLike(this)"
+                      ><i class="fa-solid fa-heart"></i
+                    ></span>
+                    <div class="textDown">
+                      <p>
+                        <i class="fa-solid fa-star"></i
+                        ><span class="rating">4.5</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="movie" data-id="5">
+                <div class="imgWrap">
+                  <img src="" alt="" class="moviePoster" />
+                </div>
+                <div class="textWrap">
+                  <div class="textTop">
+                    <h2 class="movieName">영화 제목 1</h2>
+                    <span class="topIcon" onclick="toggleLike(this)"
+                      ><i class="fa-solid fa-heart"></i
+                    ></span>
+                    <div class="textDown">
+                      <p>
+                        <i class="fa-solid fa-star"></i
+                        ><span class="rating">4.5</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="movie" data-id="6">
+                <div class="imgWrap">
+                  <img src="" alt="" class="moviePoster" />
+                </div>
+                <div class="textWrap">
+                  <div class="textTop">
+                    <h2 class="movieName">영화 제목 1</h2>
+                    <span class="topIcon" onclick="toggleLike(this)"
+                      ><i class="fa-solid fa-heart"></i
+                    ></span>
+                    <div class="textDown">
+                      <p>
+                        <i class="fa-solid fa-star"></i
+                        ><span class="rating">4.5</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="movie" data-id="7">
+                <div class="imgWrap">
+                  <img src="" alt="" class="moviePoster" />
+                </div>
+                <div class="textWrap">
+                  <div class="textTop">
+                    <h2 class="movieName">영화 제목 1</h2>
+                    <span class="topIcon" onclick="toggleLike(this)"
+                      ><i class="fa-solid fa-heart"></i
+                    ></span>
+                    <div class="textDown">
+                      <p>
+                        <i class="fa-solid fa-star"></i
+                        ><span class="rating">4.5</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="movie" data-id="8">
+                <div class="imgWrap">
+                  <img src="" alt="" class="moviePoster" />
+                </div>
+                <div class="textWrap">
+                  <div class="textTop">
+                    <h2 class="movieName">영화 제목 1</h2>
+                    <span class="topIcon" onclick="toggleLike(this)"
+                      ><i class="fa-solid fa-heart"></i
+                    ></span>
+                    <div class="textDown">
+                      <p>
+                        <i class="fa-solid fa-star"></i
+                        ><span class="rating">4.5</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <div class="btns">
+              <button class="prev-btn">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button class="next-btn">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </section>
+          <section id="section2">
+            <h2>해외 인기</h2>
+
+            <ul class="global">
+              <li class="movie" data-id="9">
+                <div class="imgWrap">
+                  <img src="" alt="" class="moviePoster" />
+                </div>
+                <div class="textWrap">
+                  <div class="textTop">
+                    <h2 class="movieName">영화 제목 2</h2>
+                    <span class="topIcon" onclick="toggleLike(this)"
+                      ><i class="fa-solid fa-heart"></i
+                    ></span>
+                    <div class="textDown">
+                      <p>
+                        <i class="fa-solid fa-star"></i
+                        ><span class="rating">4.5</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="movie" data-id="10">
+                <div class="imgWrap">
+                  <img src="" alt="" class="moviePoster" />
+                </div>
+                <div class="textWrap">
+                  <div class="textTop">
+                    <h2 class="movieName">영화 제목 2</h2>
+                    <span class="topIcon" onclick="toggleLike(this)"
+                      ><i class="fa-solid fa-heart"></i
+                    ></span>
+                    <div class="textDown">
+                      <p>
+                        <i class="fa-solid fa-star"></i
+                        ><span class="rating">4.5</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="movie" data-id="11">
+                <div class="imgWrap">
+                  <img src="" alt="" class="moviePoster" />
+                </div>
+                <div class="textWrap">
+                  <div class="textTop">
+                    <h2 class="movieName">영화 제목 2</h2>
+                    <span class="topIcon" onclick="toggleLike(this)"
+                      ><i class="fa-solid fa-heart"></i
+                    ></span>
+                    <div class="textDown">
+                      <p>
+                        <i class="fa-solid fa-star"></i
+                        ><span class="rating">4.5</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="movie" data-id="12">
+                <div class="imgWrap">
+                  <img src="" alt="" class="moviePoster" />
+                </div>
+                <div class="textWrap">
+                  <div class="textTop">
+                    <h2 class="movieName">영화 제목 2</h2>
+                    <span class="topIcon" onclick="toggleLike(this)"
+                      ><i class="fa-solid fa-heart"></i
+                    ></span>
+                    <div class="textDown">
+                      <p>
+                        <i class="fa-solid fa-star"></i
+                        ><span class="rating">4.5</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="movie" data-id="13">
+                <div class="imgWrap">
+                  <img src="" alt="" class="moviePoster" />
+                </div>
+                <div class="textWrap">
+                  <div class="textTop">
+                    <h2 class="movieName">영화 제목 2</h2>
+                    <span class="topIcon" onclick="toggleLike(this)"
+                      ><i class="fa-solid fa-heart"></i
+                    ></span>
+                    <div class="textDown">
+                      <p>
+                        <i class="fa-solid fa-star"></i
+                        ><span class="rating">4.5</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="movie" data-id="14">
+                <div class="imgWrap">
+                  <img src="" alt="" class="moviePoster" />
+                </div>
+                <div class="textWrap">
+                  <div class="textTop">
+                    <h2 class="movieName">영화 제목 2</h2>
+                    <span class="topIcon" onclick="toggleLike(this)"
+                      ><i class="fa-solid fa-heart"></i
+                    ></span>
+                    <div class="textDown">
+                      <p>
+                        <i class="fa-solid fa-star"></i
+                        ><span class="rating">4.5</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="movie" data-id="15">
+                <div class="imgWrap">
+                  <img src="" alt="" class="moviePoster" />
+                </div>
+                <div class="textWrap">
+                  <div class="textTop">
+                    <h2 class="movieName">영화 제목 2</h2>
+                    <span class="topIcon" onclick="toggleLike(this)"
+                      ><i class="fa-solid fa-heart"></i
+                    ></span>
+                    <div class="textDown">
+                      <p>
+                        <i class="fa-solid fa-star"></i
+                        ><span class="rating">4.5</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="movie" data-id="16">
+                <div class="imgWrap">
+                  <img src="" alt="" class="moviePoster" />
+                </div>
+                <div class="textWrap">
+                  <div class="textTop">
+                    <h2 class="movieName">영화 제목 2</h2>
+                    <span class="topIcon" onclick="toggleLike(this)"
+                      ><i class="fa-solid fa-heart"></i
+                    ></span>
+                    <div class="textDown">
+                      <p>
+                        <i class="fa-solid fa-star"></i
+                        ><span class="rating">4.5</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <div class="btns">
+              <button class="prev-btn">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button class="next-btn">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </section>
         </div>
       </div>
     </section>
 
     <div id="zzimList">
-      <div id="recentSub">
-        <ul>
-          <li>
-            <img src="" alt="" />
-            <h4>인사이드아웃</h4>
-            <i class="fa-solid fa-star">9.4</i>
-            <i class="fa-regular fa-heart zzim"></i>
-            <i class="fa-solid fa-heart zzim on"></i>
-          </li>
-        </ul>
-      </div>
+      <ul id="wishlistItems"></ul>
     </div>
 
     <script src="js/index_header.js"></script>
     <script src="js/index_main.js"></script>
+    <script src="js/index_rangking.js"></script>
     <script src="js/zzimList.js"></script>
   </body>
 </html>
