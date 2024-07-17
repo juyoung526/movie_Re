@@ -6,6 +6,7 @@
     <title>Dive in_genre</title>
     <!-- style -->
     <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/sub.css" />
     <!-- 구글폰트 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -40,11 +41,34 @@
           <i class="fa-solid fa-folder-open"></i>
           <ul class="sub folderSub">
             <li class="titleDrama">
-              <a href="genre.html">드라마</a>
+              <a href="genre.html?genre=drama" id="drama" data-genre-id="18"
+                >드라마</a
+              >
             </li>
-            <li class="titlethriller"><a href="genre.html">스릴러</a></li>
-            <li class="titleRomance"><a href="genre.html">로맨스</a></li>
-            <li class="titleAnimation"><a href="genre.html">애니메이션</a></li>
+            <li class="titlethriller">
+              <a
+                href="genre.html?genre=thriller"
+                id="thriller"
+                data-genre-id="53"
+                >스릴러</a
+              >
+            </li>
+            <li class="titleRomance">
+              <a
+                href="genre.html?genre=romance"
+                id="romance"
+                data-genre-id="10749"
+                >로맨스</a
+              >
+            </li>
+            <li class="titleAnimation">
+              <a
+                href="genre.html?genre=animation"
+                id="animation"
+                data-genre-id="16"
+                >애니메이션</a
+              >
+            </li>
           </ul>
         </li>
         <li class="heart">
@@ -62,6 +86,28 @@
       </ul>
     </header>
 
+    <div class="topScreen">
+      <!-- <div id="genreScreen">
+        <img src="" alt="" />
+        <div id="title">
+          <h2></h2>
+          <i class="fa-solid fa-star"></i>
+        </div>
+      </div> -->
+    </div>
+
+    <div class="bottomScreen">
+      <ul id="genreSub">
+        <!-- <li>
+          <img src="" alt="" />
+          <h4></h4>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-regular fa-heart zzim"></i>
+          <i class="fa-solid fa-heart zzim on"></i>
+        </li> -->
+      </ul>
+    </div>
+
     <div id="zzimList">
       <div id="recentSub">
         <ul>
@@ -78,5 +124,7 @@
 
     <script src="js/index_header.js"></script>
     <script src="js/zzimList.js"></script>
+
+    <script type="module" src="js/genre.js"></script>
   </body>
 </html>
