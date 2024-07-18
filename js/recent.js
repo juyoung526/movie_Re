@@ -31,17 +31,15 @@ function movieDisplay(movies) {
     const mainMovie = document.createElement("div");
     mainMovie.innerHTML = `
           <div id="genreScreen">
-           <img class="bigPoster" src="https://image.tmdb.org/t/p/w500${
-             mainToShow.poster_path
-           }" alt="${mainToShow.title} 포스터" />
-          <img class="smallPoster" src="https://image.tmdb.org/t/p/w500${
-            mainToShow.poster_path
-          }" alt="${mainToShow.title} 포스터" />
+           <img class="bigPoster" src="https://image.tmdb.org/t/p/w500${mainToShow.poster_path
+      }" alt="${mainToShow.title} 포스터" />
+          <img class="smallPoster" src="https://image.tmdb.org/t/p/w500${mainToShow.poster_path
+      }" alt="${mainToShow.title} 포스터" />
           <div id="title">
             <h2>${mainToShow.title}</h2>
             <i class="fa-solid fa-star">${mainToShow.vote_average.toFixed(
-              1
-            )}</i>
+        1
+      )}</i>
           </div>
         </div>
       `;
@@ -51,10 +49,10 @@ function movieDisplay(movies) {
   const movieToShow = movies.slice(1, 17);
   movieToShow.forEach((movie) => {
     const liList = document.createElement("li");
+    liList.id = movie.id;
     liList.innerHTML = `
-       <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${
-      movie.title
-    } 포스터" />
+       <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title
+      } 포스터" />
             <h4>${movie.title}</h4>
             <i class="fa-solid fa-star">${movie.vote_average.toFixed(1)}</i>
             <i class="fa-regular fa-heart zzim"></i>

@@ -102,5 +102,38 @@ function displayMovieDetails(movie) {
     release: "release_date",
     introduction: "overview",
   };
+
+  // 각 정보를 표시하는 반복문
+  for (const key in movieDetails) {
+    if (movieDetails.hasOwnProperty(key)) {
+      const element = movieDetails[key];
+      const spanElement = document.getElementById(key);
+      if (movie[element]) {
+        spanElement.textContent = movie[element];
+      } else {
+        spanElement.textContent = "정보 없음";
+      }
+    }
+  }
+
+  const poster = document.getElementById("poster");
+  poster.style.backgroundImage = `url("https://image.tmdb.org/t/p/w500/${movie.poster_path}")`;
 }
+async function viewMovie(movieId) {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=ko-KR`
+    );
+
+    const data = await response.json();
+    console.log(data);
+    displayMovieDetails(data);
+
+    // 가져온 영화 정보를 사용하여 필요한 작업 수행
+    // 예를 들어, 상세 정보를 화면에 표시하는 등의 작업
+  } catch (error) {
+    console.error("에러 발생:", error);
+  }
+}
+
 
