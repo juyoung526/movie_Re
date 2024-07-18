@@ -1,97 +1,106 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dive in_main</title>
-    <!-- style -->
-    <link rel="stylesheet" href="css/header.css" />
-    <link rel="stylesheet" href="css/index.css" />
-    <!-- 구글폰트 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Libre+Barcode+128&display=swap"
-      rel="stylesheet"
-    />
-    <!-- 폰트어썸 -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- swiper -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper@7.0.6/swiper-bundle.min.css"
-    />
-  </head>
 
-  <body>
-    <header>
-      <div class="loGo">
-        <h1>
-          <a href="">Dive<span>i</span>n</a>
-        </h1>
-      </div>
-      <ul class="main">
-        <li class="video">
-          <i class="fa-solid fa-video"></i>
-          <ul class="sub videoSub">
-            <li class="titleRecent"><a href="recent.html">최신영화</a></li>
-          </ul>
-        </li>
-        <li class="folder">
-          <i class="fa-solid fa-folder-open"></i>
-          <ul class="sub folderSub">
-            <li class="titleDrama">
-              <a href="genre.html?genre=drama">드라마</a>
-            </li>
-            <li class="titlethriller">
-              <a href="genre.html?genre=thriller">스릴러</a>
-            </li>
-            <li class="titleRomance">
-              <a href="genre.html?genre=romance">로맨스</a>
-            </li>
-            <li class="titleAnimation">
-              <a href="genre.html?genre=animation">애니메이션</a>
-            </li>
-          </ul>
-        </li>
-        <li class="heart">
-          <a href=""><i class="fa-solid fa-heart"></i></a>
-          <ul class="sub heartSub">
-            <li class="pick"><a href="#">찜 목록</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="search.html"><i class="fa-solid fa-magnifying-glass"></i></a>
-        </li>
-        <li>
-          <a href="login.html"><i class="fa-solid fa-user"></i></a>
-        </li>
-      </ul>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dive in_main</title>
+  <!-- style -->
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/index.css" />
+  <!-- 구글폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+128&display=swap" rel="stylesheet" />
+  <!-- 폰트어썸 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7.0.6/swiper-bundle.min.css" />
+</head>
 
-    <section>
-      <div class="mainHd">
-        <ul id="mainScreen">
-          <!--  <li>
+<body>
+  <header>
+    <div class="loGo">
+      <h1>
+        <a href="">Dive<span>i</span>n</a>
+      </h1>
+    </div>
+    <ul class="main">
+      <li class="video">
+        <i class="fa-solid fa-video"></i>
+        <ul class="sub videoSub">
+          <li class="titleRecent"><a href="recent.html">최신영화</a></li>
+        </ul>
+      </li>
+      <li class="folder">
+        <i class="fa-solid fa-folder-open"></i>
+        <ul class="sub folderSub">
+          <li class="titleDrama">
+            <a href="genre.html?genre=drama">드라마</a>
+          </li>
+          <li class="titlethriller">
+            <a href="genre.html?genre=thriller">스릴러</a>
+          </li>
+          <li class="titleRomance">
+            <a href="genre.html?genre=romance">로맨스</a>
+          </li>
+          <li class="titleAnimation">
+            <a href="genre.html?genre=animation">애니메이션</a>
+          </li>
+        </ul>
+      </li>
+      <li class="heart">
+        <a href=""><i class="fa-solid fa-heart"></i></a>
+        <ul class="sub heartSub">
+          <li class="pick"><a href="#">찜 목록</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="search.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+      </li>
+      <li>
+        <a href="login.html"><i class="fa-solid fa-user"></i></a>
+      </li>
+    </ul>
+  </header>
+
+  <section>
+    <div class="mainHd">
+      <ul id="mainScreen">
+        <!--  <li>
                     <img src="" alt="bigMainPoster">
                         <div>
                             <img class="centerImg" src=""  alt="mainmovePoster">
                             <h3 class="centerText"></h3>
                         </div> 
             </li> -->
+      </ul>
+    </div>
+    <div class="container">
+      <div id="subScreen1">
+        <h2>국내 인기</h2>
+        <ul id="domestic">
+          <!-- <li>
+                        <img src="img/testposter_01.jpg" alt="movieposter">
+                        <ul class="textWrap">
+                            <li>
+                                <h4 id="title">원더</h4>
+                                <p>로맨스</p>
+                            </li>
+                            <li>
+                                <p>8.9</p>
+                                <span><i class="fa-solid fa-heart"></i></span>
+                            </li>
+                        </ul>
+                    </li> -->
         </ul>
       </div>
-      <div class="container">
-        <div id="subScreen1">
-          <h2>국내 인기</h2>
-          <ul id="domestic">
-            <!-- <li>
+      <div id="subScreen2">
+        <h2>해외 인기</h2>
+        <ul id="abroad">
+          <!-- <li>
                         <img src="img/testposter_01.jpg" alt="movieposter">
                         <ul class="textWrap">
                             <li>
@@ -104,45 +113,29 @@
                             </li>
                         </ul>
                     </li> -->
-          </ul>
-        </div>
-        <div id="subScreen2">
-          <h2>해외 인기</h2>
-          <ul id="abroad">
-            <!-- <li>
-                        <img src="img/testposter_01.jpg" alt="movieposter">
-                        <ul class="textWrap">
-                            <li>
-                                <h4 id="title">원더</h4>
-                                <p>로맨스</p>
-                            </li>
-                            <li>
-                                <p>8.9</p>
-                                <span><i class="fa-solid fa-heart"></i></span>
-                            </li>
-                        </ul>
-                    </li> -->
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <div id="zzimList">
-      <div id="recentSub">
-        <ul>
-          <li>
-            <img src="" alt="" />
-            <h4>인사이드아웃</h4>
-            <i class="fa-solid fa-star">9.4</i>
-            <i class="fa-regular fa-heart zzim"></i>
-            <i class="fa-solid fa-heart zzim on"></i>
-          </li>
         </ul>
       </div>
     </div>
+  </section>
 
-    <script src="js/index_header.js"></script>
-    <script src="js/index_main.js"></script>
-    <script src="js/zzimList.js"></script>
-  </body>
+  <div id="zzimList">
+    <div id="recentSub">
+      <ul>
+        <li>
+          <img src="" alt="" />
+          <h4>인사이드아웃</h4>
+          <i class="fa-solid fa-star">9.4</i>
+          <i class="fa-regular fa-heart zzim"></i>
+          <i class="fa-solid fa-heart zzim on"></i>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="js/index_header.js"></script>
+  <script src="js/index_main.js"></script>
+  <script src="js/zzimList.js"></script>
+  <script src="js/detail.js"></script>
+</body>
+
 </html>
