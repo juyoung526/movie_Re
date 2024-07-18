@@ -29,39 +29,44 @@ function movieDisplay(movies) {
   const mainToShow = movies[0];
   if (mainToShow) {
     const mainMovie = document.createElement("div");
+    mainMovie.id = `movie-${mainToShow.id}`;
     mainMovie.innerHTML = `
-          <div id="genreScreen">
-           <img class="bigPoster" src="https://image.tmdb.org/t/p/w500${
-             mainToShow.poster_path
-           }" alt="${mainToShow.title} 포스터" />
-          <img class="smallPoster" src="https://image.tmdb.org/t/p/w500${
-            mainToShow.poster_path
-          }" alt="${mainToShow.title} 포스터" />
-          <div id="title">
-            <h2>${mainToShow.title}</h2>
-            <i class="fa-solid fa-star">${mainToShow.vote_average.toFixed(
-              1
-            )}</i>
-          </div>
+      <div id="genreScreen">
+        <img class="bigPoster" src="https://image.tmdb.org/t/p/w500${mainToShow.poster_path}" alt="${mainToShow.title} 포스터" />
+        <img class="smallPoster" src="https://image.tmdb.org/t/p/w500${mainToShow.poster_path}" alt="${mainToShow.title} 포스터" />
+        <div id="title">
+          <h2>${mainToShow.title}</h2>
+          <i class="fa-solid fa-star">${mainToShow.vote_average.toFixed(1)}</i>
         </div>
-      `;
+      </div>
+    `;
     mainScreen.appendChild(mainMovie);
   }
 
   const movieToShow = movies.slice(1, 17);
   movieToShow.forEach((movie) => {
     const liList = document.createElement("li");
+    liList.id = `movie-${movie.id}`;
+    liList.classList.add("movie-item");
     liList.innerHTML = `
-       <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${
-      movie.title
-    } 포스터" />
-            <h4>${movie.title}</h4>
-            <i class="fa-solid fa-star">${movie.vote_average.toFixed(1)}</i>
-            <i class="fa-regular fa-heart zzim"></i>
-            <i class="fa-solid fa-heart zzim on"></i>
-      `;
+      <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title} 포스터" />
+      <h4>${movie.title}</h4>
+      <i class="fa-solid fa-star">${movie.vote_average.toFixed(1)}</i>
+      <i class="fa-regular fa-heart zzim"></i>
+      <i class="fa-solid fa-heart zzim on"></i>
+    `;
     subGenrelist.appendChild(liList);
   });
 }
 
 displayMovies();
+
+// 영화 항목 클릭 이벤트 처리 (선택적)
+document.addEventListener('click', function(event) {
+  const movieElement = event.target.closest('.movie-item');
+  if (movieElement) {
+    const movieId = movieElement.id.split('-')[1];
+    console.log(`선택된 영화 ID: ${movieId}`);
+    // 여기에 상세 페이지로 이동하는 코드를 추가할 수 있습니다.
+  }
+});
