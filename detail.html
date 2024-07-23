@@ -4,25 +4,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  >
+  <title>Dive in_detail</title>
+  <!-- style -->
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/detail.css" />
 
-  <link rel="stylesheet" href="css/detail.css">
-  <link href="css/index.css" rel="stylesheet" />
   <!-- 구글폰트 -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Extended+Text&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+128&display=swap" rel="stylesheet" />
   <!-- 폰트어썸 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
 </head>
 
 <body>
+
   <header>
     <div class="loGo">
       <h1>
@@ -40,21 +38,27 @@
         <i class="fa-solid fa-folder-open"></i>
         <ul class="sub folderSub">
           <li class="titleDrama">
-            <a href="genre.html">드라마</a>
+            <a href="genre.html?genre=18" genre-id="18">드라마</a>
           </li>
-          <li class="titlethriller"><a href="genre.html">스릴러</a></li>
-          <li class="titleRomance"><a href="genre.html">로맨스</a></li>
-          <li class="titleAnimation"><a href="genre.html">애니메이션</a></li>
+          <li class="titlethriller">
+            <a href="genre.html?genre=53" genre-id="53">스릴러</a>
+          </li>
+          <li class="titleRomance">
+            <a href="genre.html?genre=10749" genre-id="10749">로맨스</a>
+          </li>
+          <li class="titleAnimation">
+            <a href="genre.html?genre=16" genre-id="16">애니메이션</a>
+          </li>
         </ul>
       </li>
       <li class="heart">
-        <a href=""><i class="fa-solid fa-heart"></i></a>
+        <i class="fa-solid fa-heart"></i>
         <ul class="sub heartSub">
           <li class="pick"><a href="#">찜 목록</a></li>
         </ul>
       </li>
       <li>
-        <i class="fa-solid fa-magnifying-glass"></i>
+        <a href="search.html"><i class="fa-solid fa-magnifying-glass"></i></a>
       </li>
       <li>
         <a href="login.html"><i class="fa-solid fa-user"></i></a>
@@ -62,46 +66,55 @@
     </ul>
   </header>
 
-  <section id="subDetail">
-    <ul class="detail">
-      <li>
-        <div class="conTop" id="poster">
-          <div id="videoWrap">
+  <div class="detail">
+    <main id="movieDetail">
+      <div class="poster-container">
+        <img id="posterImage" src="" alt="영화 포스터">
+        <div id="mainTrailer" class="trailer-container">
+          <!-- 메인 트레일러 비디오가 여기에 삽입됩니다 -->
+        </div>
+      </div>
+      <div class="movie-info">
+        <div class="infoTop">
+          <h1 id="movieTitle"></h1>
+          <div class="rating-container">
+            <p id="movieRating"></p>
+            <div class="stars-outer">
+              <div class="stars-inner"></div>
+            </div>
           </div>
         </div>
-        <div class="conBot">
-          <h2 id="movieName" class="sub">파묘</h2>
-          <ul>
-            <li> <i class="fa-solid fa-star"></i>
-              <span id="rating">7.5</span>
-            </li>
-            <li>
-              <span id="release">2014</span>
-            </li>
-
-          </ul>
-          <p>감독 <span id="director"></span></p>
-          <p>출연 <span id="cast"></span></p>
-          <p>소개 <span id="introduction">미국 LA, 거액의 의뢰를 받은 무당 ‘화림’(김고은)과 ‘봉길’(이도현)은 기이한 병이 대물림되는 집안의 장손을 만난다. 조상의 묫자리가
-              화근임을 알아챈 ‘화림’은 이장을 권하고, 돈 냄새를 맡은 최고의 풍수사 ‘상덕’(최민식)과 장의사 ‘영근’(유해진)이 합류한다. “전부 잘 알 거야… 묘 하나 잘못 건들면 어떻게 되는지”
-              절대 사람이 묻힐 수 없는 악지에 자리한 기이한 묘. ‘상덕’은 불길한 기운을 느끼고 제안을 거절하지만, ‘화림’의 설득으로 결국 파묘가 시작되고… 나와서는 안될 것이 나왔다.
-
-            </span></p>
-          <div class="trailerWrap">
-
+        <p id="movieDirector"></p>
+        <p id="movieCast">출연</p>
+        <div class="cast-images">
+          <div class="cast-member">
+            <img class="cast-image" src="" alt="">
+            <p class="cast-name"></p>
+          </div>
+          <div class="cast-member">
+            <img class="cast-image" src="" alt="">
+            <p class="cast-name"></p>
+          </div>
+          <div class="cast-member">
+            <img class="cast-image" src="" alt="">
+            <p class="cast-name"></p>
           </div>
         </div>
-        </div>
-      </li>
-    </ul>
-  </section>
+        <p id="movieOverview"></p>
+      </div>
+    </main>
 
+    <section id="trailerSection" style="display: none;">
+      <h2>트레일러</h2>
+      <div class="additional-trailers">
+        <div class="trailer-container" id="additionalTrailer1"></div>
+        <div class="trailer-container" id="additionalTrailer2"></div>
+      </div>
+    </section>
   </div>
-  </div>
-  <script src="js/detail.js"></script>
+
   <script src="js/index_header.js"></script>
-  <script src="js/recent.js"></script>
-  <script src="js/apiKey.js"></script>
+  <script type="module" src="js/detail.js"></script>
 </body>
 
 </html>

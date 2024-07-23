@@ -35,3 +35,17 @@ async function mainMovies() {
 }
 mainMovies();
 
+// 영화 항목 클릭 이벤트 처리
+document.addEventListener('click', function (event) {
+    const movieElement = event.target.closest('[id^="movie-"]');
+    if (movieElement) {
+        const movieId = movieElement.id.split('-')[1];
+        navigateToMovieDetail(movieId);
+    }
+});
+
+// 영화 상세 페이지로 이동하는 함수
+function navigateToMovieDetail(movieId) {
+    window.location.href = `detail.html?id=${movieId}`;
+    console.log(`Navigating to movie detail page for movie ID ${movieId}`);
+}

@@ -71,69 +71,129 @@
 //   // return data.results;
 //   console.log(data);
 // }
-// getMoviesByGenre(28);
-const api_key = "e771164d62de82fa2de8fde83d339c37";
+// getMoviesByGenre(28);import { getApiKey } from "./apiKey.js";
+import { getApiKey } from "./apiKey.js";
+const API_KEY = getApiKey();
 
-async function getPopularMovies() {
+async function getMovieDetails(movieId) {
   const response = await fetch(
-    `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=ko-KR`
+    `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=ko-KR&append_to_response=credits,videos`
   );
   if (!response.ok) {
     throw new Error(`HTTP 오류! 상태: ${response.status}`);
   }
-  const data = await response.json();
-  console.log(data.results);
-  return data.results;
+  return await response.json();
 }
 
-// 인기 있는 영화 목록을 가져오기
-getPopularMovies()
-  .then(results => {
-    console.log(results); // 여기서 결과를 처리합니다
-  })
-  .catch(error => {
-    console.error('영화 가져오기 오류:', error);
-  });
+function getMovieIdFromUrl() {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get("id");
+}
 
-function displayMovieDetails(movie) {
-  const movieDetails = {
-    movieName: "title",
-    rating: "vote_average",
-    release: "release_date",
-    introduction: "overview",
-  };
+function updateMovieDetails(movie) {
+  document.getElementById("movieTitle").textContent = movie.title;
 
-  // 각 정보를 표시하는 반복문
-  for (const key in movieDetails) {
-    if (movieDetails.hasOwnProperty(key)) {
-      const element = movieDetails[key];
-      const spanElement = document.getElementById(key);
-      if (movie[element]) {
-        spanElement.textContent = movie[element];
-      } else {
-        spanElement.textContent = "정보 없음";
-      }
+  const rating = movie.vote_average;
+  document.getElementById("movieRating").textContent = `${rating.toFixed(1)}`;
+
+  // 별점 시각화
+  const starPercentage = (rating / 10) * 100;
+  const starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`;
+  document.querySelector(".stars-inner").style.width = starPercentageRounded;
+
+  document.getElementById("movieDirector").textContent = `감독: ${getDirectorNames(movie.credits.crew)}`;
+
+  document.getElementById("movieOverview").textContent = movie.overview;
+
+  updatePosterAndTrailers(movie);
+  updateCastImages(movie.credits.cast);
+}
+
+function getDirectorNames(crew) {
+  const directors = crew.filter(person => person.job === 'Director');
+  return directors.map(director => director.name).join(', ');
+}
+
+function getCastNames(cast) {
+  return cast.slice(0, 3).map(actor => actor.name).join(', ');
+}
+
+function updateCastImages(cast) {
+  const castMembers = document.querySelectorAll('.cast-member');
+  const defaultAvatarUrl = 'https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png';
+
+  cast.slice(0, 3).forEach((actor, index) => {
+    const img = castMembers[index].querySelector('.cast-image');
+    const name = castMembers[index].querySelector('.cast-name');
+    if (actor.profile_path) {
+      img.src = `https://image.tmdb.org/t/p/w200${actor.profile_path}`;
+    } else {
+      img.src = defaultAvatarUrl;
     }
+    img.alt = actor.name;
+    name.textContent = actor.name;
+  });
+}
+function updatePosterAndTrailers(movie) {
+  const posterPath = movie.poster_path;
+  const posterImg = document.getElementById("posterImage");
+  if (posterPath) {
+    posterImg.src = `https://image.tmdb.org/t/p/original${posterPath}`;
+    posterImg.alt = `${movie.title} 포스터`;
+  } else {
+    posterImg.src = 'placeholder.jpg';
+    posterImg.alt = '포스터 없음';
   }
 
-  const poster = document.getElementById("poster");
-  poster.style.backgroundImage = `url("https://image.tmdb.org/t/p/w500/${movie.poster_path}")`;
+  const videos = movie.videos.results.filter(video => video.site === "YouTube");
+  const trailers = videos.filter(video => video.type === "Trailer");
+  const otherVideos = videos.filter(video => video.type !== "Trailer");
+
+  // 메인 트레일러 처리
+  const mainTrailerContainer = document.getElementById('mainTrailer');
+  if (trailers.length > 0) {
+    mainTrailerContainer.innerHTML = `
+            <iframe width="100%" height="100%" 
+                src="https://www.youtube.com/embed/${trailers[0].key}?autoplay=1&mute=1" 
+                frameborder="0" allow="autoplay; encrypted-media" 
+                allowfullscreen>
+            </iframe>
+        `;
+  } else {
+    mainTrailerContainer.style.display = 'none';
+  }
+
+  // 추가 비디오 처리
+  const trailerSection = document.getElementById('trailerSection');
+  const additionalVideos = [...trailers.slice(1), ...otherVideos].slice(0, 2); // 최대 2개의 추가 비디오
+
+  if (additionalVideos.length > 0) {
+    trailerSection.style.display = 'block';
+    additionalVideos.forEach((video, index) => {
+      document.getElementById(`additionalTrailer${index + 1}`).innerHTML = `
+                <iframe width="100%" height="100%" 
+                    src="https://www.youtube.com/embed/${video.key}" 
+                    frameborder="0" allow="encrypted-media" 
+                    allowfullscreen>
+                </iframe>
+            `;
+    });
+  } else {
+    trailerSection.style.display = 'none';
+  }
 }
-async function viewMovie(movieId) {
+
+async function displayMovieDetails() {
   try {
-    const response = await fetch(
-      `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=ko-KR`
-    );
-
-    const data = await response.json();
-    console.log(data);
-    displayMovieDetails(data);
-
-    // 가져온 영화 정보를 사용하여 필요한 작업 수행
-    // 예를 들어, 상세 정보를 화면에 표시하는 등의 작업
+    const movieId = getMovieIdFromUrl();
+    if (!movieId) {
+      throw new Error("영화 ID를 찾을 수 없습니다.");
+    }
+    const movie = await getMovieDetails(movieId);
+    updateMovieDetails(movie);
   } catch (error) {
-    console.error("에러 발생:", error);
+    console.error("영화 정보 가져오기 오류:", error);
   }
 }
 
-
+document.addEventListener("DOMContentLoaded", displayMovieDetails);

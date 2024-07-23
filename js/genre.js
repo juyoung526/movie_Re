@@ -3,11 +3,16 @@ import { getApiKey } from "./apiKey.js";
 const API_KEY = getApiKey();
 
 async function getMoviesByGenre(genreId) {
-  const response = await fetch(
-    `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=ko-KR&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${genreId}`
-  );
-  const data = await response.json();
-  return data.results;
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=ko-KR&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${genreId}`
+    );
+    const data = await response.json();
+    return data.results;
+  } catch (error) {
+    console.error("Error fetching movies by genre:", error);
+    return [];
+  }
 }
 
 function movieDisplay(movies) {
@@ -76,11 +81,16 @@ window.addEventListener("load", updateFromUrl);
 window.addEventListener("popstate", updateFromUrl);
 
 // 영화 항목 클릭 이벤트 처리
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
   const movieElement = event.target.closest('[id^="movie-"]');
   if (movieElement) {
     const movieId = movieElement.id.split('-')[1];
-    // 여기에 상세 페이지로 이동하는 코드를 추가하세요
-    console.log(`상세 페이지로 이동: 영화 ID ${movieId}`);
+    navigateToMovieDetail(movieId);
   }
 });
+
+// 영화 상세 페이지로 이동하는 함수
+function navigateToMovieDetail(movieId) {
+  window.location.href = `detail.html?id=${movieId}`;
+  console.log(`Navigating to movie detail page for movie ID ${movieId}`);
+}
