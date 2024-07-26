@@ -1,7 +1,4 @@
 /* section */
-#rangkingBox {
-  padding-bottom: 80px;
-}
 #section {
   width: 90%;
   position: relative;
@@ -71,18 +68,10 @@
   justify-content: space-between;
 }
 
-.container .textWrap i {
-  color: #fff;
-}
-
 .pick {
   color: #e9a445;
 }
 
-.container h2 {
-  margin-top: 80px;
-  margin-left: 50px;
-}
 /*rangkingBox*/
 /* container2 */
 #section1 {
@@ -90,38 +79,39 @@
   margin: 8rem auto;
   position: relative;
 }
+#section1 > h2,
+#section2 > h2 {
+  margin-left: 50px;
+}
 section img {
   width: 100%;
-  height: 100%;
   object-fit: cover;
   border-radius: 10px;
   transition: 0.5s;
 }
-section h2 {
-  color: white;
-}
 .imgWrap {
   width: 100%;
-  height: 100%;
+  height: 80%;
   overflow: hidden;
   border-radius: 10px;
 }
 .korea,
 .global {
-  width: 100%;
-  height: 350px;
+  width: 90%;
   display: flex;
   grid-template-columns: repeat(4, 1fr);
   justify-content: center;
-  margin: 0 auto;
+  margin: 2% auto 0;
   gap: 1.5rem;
 }
+
 .korea > li,
 .global > li {
   width: 100%;
   height: 100%;
   border-radius: 10px;
   position: relative;
+  top: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -136,26 +126,32 @@ section h2 {
 .global > li .textWrap {
   width: 100%;
   position: absolute;
-  bottom: -6rem;
-  color: #fff;
+  color: #e9a445;
 }
 
 .textTop {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  justify-content: center;
-  align-items: center;
+  /* display: grid; */
+  /* grid-template-columns: 3fr 1fr; */
+  /* justify-content: center;
+  align-items: center; */
+  color: #e9a445;
 }
-
+i {
+  color: #e9a445;
+}
 .textTop span {
   display: inline-block;
 }
-.textDown {
-  margin-top: 1rem;
+
+.topIcon {
+  position: absolute;
+  top: -620%;
+  right: 5%;
 }
-.textDown i {
-  margin-right: 0.5rem;
-  color: yellow;
+.korea img,
+.global img {
+  height: 300px;
+  position: relative;
 }
 .btns {
   font-size: 2rem;
@@ -260,5 +256,5 @@ button {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 100%;
+  /* width: 100%; */
 } /* 무비 이름 길 경우 생략 - 지향 */

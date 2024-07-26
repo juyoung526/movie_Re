@@ -1,13 +1,3 @@
-let pick = document.querySelector(".pick");
-let zzimList = document.querySelector("#zzimList");
-console.log(pick);
-console.log(zzimList);
-
-pick.addEventListener("click", (event) => {
-  event.preventDefault();
-  zzimList.classList.toggle("action");
-});
-//
 // 찜 목록을 저장할 배열
 let wishlist = [];
 
@@ -35,31 +25,43 @@ function toggleLike(element) {
     const itemElement = movieElement.cloneNode(true); // 요소를 복사합니다.
     wishlist.push({ id: itemId, element: itemElement });
 
-    // 하트 아이콘을 빨간색으로 설정합니다.
-    const heartIcon = element.querySelector("i.fa-heart") || element;
-    heartIcon.classList.add("red");
+    // 하트 아이콘을 채워진 하트로 설정합니다.
+    const heartIcon = element.querySelector("i");
+    if (heartIcon) {
+      heartIcon.classList.remove("fa-regular", "fa-heart");
+      heartIcon.classList.add("fa-solid", "fa-heart");
+    }
 
-    // 해당 항목의 인덱스 하트 아이콘도 찾아서 색상을 변경합니다.
+    // 해당 항목의 인덱스 하트 아이콘도 찾아서 변경합니다.
     const indexHeartIcons = document.querySelectorAll(
-      `#section1 li[data-id="${itemId}"] i.fa-heart, #section2 li[data-id="${itemId}"] i.fa-heart, #searchResult li[data-id="${itemId}"] i.fa-heart`
+      `#section1 li[data-id="${itemId}"] i, #section2 li[data-id="${itemId}"] i, #searchResult li[data-id="${itemId}"] i`
     );
     if (indexHeartIcons) {
-      indexHeartIcons.forEach((icon) => icon.classList.add("red"));
+      indexHeartIcons.forEach((icon) => {
+        icon.classList.remove("fa-regular", "fa-heart");
+        icon.classList.add("fa-solid", "fa-heart");
+      });
     }
   } else {
     // 찜 목록에 이미 있으면 삭제합니다.
     wishlist.splice(index, 1);
 
-    // 하트 아이콘의 색상 제거
-    const heartIcon = element.querySelector("i.fa-heart") || element;
-    heartIcon.classList.remove("red");
+    // 하트 아이콘을 빈 하트로 설정합니다.
+    const heartIcon = element.querySelector("i");
+    if (heartIcon) {
+      heartIcon.classList.remove("fa-solid", "fa-heart");
+      heartIcon.classList.add("fa-regular", "fa-heart");
+    }
 
-    // 해당 항목의 인덱스 하트 아이콘도 찾아서 색상을 변경합니다.
+    // 해당 항목의 인덱스 하트 아이콘도 찾아서 변경합니다.
     const indexHeartIcons = document.querySelectorAll(
-      `#section1 li[data-id="${itemId}"] i.fa-heart, #section2 li[data-id="${itemId}"] i.fa-heart, #searchResult li[data-id="${itemId}"] i.fa-heart`
+      `#section1 li[data-id="${itemId}"] i, #section2 li[data-id="${itemId}"] i, #searchResult li[data-id="${itemId}"] i`
     );
     if (indexHeartIcons) {
-      indexHeartIcons.forEach((icon) => icon.classList.remove("red"));
+      indexHeartIcons.forEach((icon) => {
+        icon.classList.remove("fa-solid", "fa-heart");
+        icon.classList.add("fa-regular", "fa-heart");
+      });
     }
   }
 
@@ -77,9 +79,12 @@ function updateWishlist() {
     const li = item.element.cloneNode(true); // 요소를 복사합니다.
     li.classList.add("wishlist-item"); // 클래스를 추가합니다.
 
-    // 하트 아이콘을 빨간색으로 설정합니다.
-    const heartIcon = li.querySelector("i.fa-heart");
-    heartIcon.classList.add("red");
+    // 하트 아이콘을 채워진 하트로 설정합니다.
+    const heartIcon = li.querySelector("i");
+    if (heartIcon) {
+      heartIcon.classList.remove("fa-regular", "fa-heart");
+      heartIcon.classList.add("fa-solid", "fa-heart");
+    }
 
     // 삭제 버튼에 클릭 이벤트를 추가합니다.
     li.addEventListener("click", () => {
@@ -97,10 +102,13 @@ function removeItem(itemId) {
 
   // 해당 항목의 인덱스 하트 아이콘을 찾아서 색상을 변경합니다.
   const indexHeartIcons = document.querySelectorAll(
-    `#section1 li[data-id="${itemId}"] i.fa-heart, #section2 li[data-id="${itemId}"] i.fa-heart, #searchResult li[data-id="${itemId}"] i.fa-heart`
+    `#section1 li[data-id="${itemId}"] i, #section2 li[data-id="${itemId}"] i, #searchResult li[data-id="${itemId}"] i`
   );
   if (indexHeartIcons) {
-    indexHeartIcons.forEach((icon) => icon.classList.remove("red"));
+    indexHeartIcons.forEach((icon) => {
+      icon.classList.remove("fa-solid", "fa-heart");
+      icon.classList.add("fa-regular", "fa-heart");
+    });
   }
 
   // 찜 목록을 업데이트합니다.
